@@ -19,7 +19,7 @@ function Display(props) {
     }
     return (
     <div>
-        <h1>{display}</h1>
+        <h1 className = "display">{display}</h1>
         <Buttons onClick = {handleClick} onEquals = {handleMath(expression)} />
     </div>
     );
