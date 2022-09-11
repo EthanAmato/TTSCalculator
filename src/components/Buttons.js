@@ -28,33 +28,34 @@ function Buttons(props) {
             }
     }
   return (
-    <div>
-        <div>
-            {renderButton("+")}
+    <div class="button-container">
+        <div className="top-row">
+            {renderButton("Clear")}
+            {renderButton("\u00F7")}
         </div>
-        <div>
+        <div className="middle-row">
             {renderButton(7)}
             {renderButton(8)}
             {renderButton(9)}
-            
-            {renderButton("-")}
+            {renderButton("x")}
         </div>
-        <div>
+        <div className="middle-row">
             {renderButton(4)}
             {renderButton(5)}
             {renderButton(6)}
-            {renderButton("x")}
+            {renderButton("-")}
         </div>
-        <div>
+        <div className="middle-row">
             {renderButton(1)}
             {renderButton(2)}
             {renderButton(3)}
-            {renderButton("=")}
+            {renderButton("+")}
+            
         </div>
-        <div>
+        <div className="bottom-row">
             {renderButton(0)}
-            {renderButton("Clear")}
-            {renderButton("\u00F7")}
+            {renderButton(".")}
+            {renderButton("=")}
         </div>
     </div>
   );
