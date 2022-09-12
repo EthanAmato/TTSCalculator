@@ -9,7 +9,6 @@ function Button(props){
 }
 
 function Buttons(props) {
-    console.log(props);
     function renderButton(i){
         
         switch(i) {
@@ -17,7 +16,7 @@ function Buttons(props) {
             return (
                 <Button
                     value={i} //uses the props that are inherited from Display
-                    onClick={()=> props.onEquals(props.mathExpression, props.currentOp)}
+                    onClick={()=> props.onEquals(props.mathExpressions, props.currentOp)}
                     buttonId = {"Equals"}
                 />);
             break;
