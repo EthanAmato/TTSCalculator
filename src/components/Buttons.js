@@ -1,34 +1,89 @@
 import React from "react";
-import style from "../css/style.css"
 
 function Button(props){
     return (
-        <button className="numberButton" onClick={props.onClick}>
+        <button className={"numberButton btn btn-secondary"} onClick={props.onClick} id = {"buttonId"+props.buttonId}>
           {props.value}
         </button>
       );
 }
 
 function Buttons(props) {
+    console.log(props);
     function renderButton(i){
-        if (i==="="){
+        
+        switch(i) {
+            case "=":
             return (
                 <Button
                     value={i} //uses the props that are inherited from Display
-                    onClick={() => props.onEquals(props.ex)}
-                />
-            );
-        } else {
+                    onClick={()=> props.onEquals(props.mathExpression, props.currentOp)}
+                    buttonId = {"Equals"}
+                />);
+            break;
+            case "Clear":
+                return (
+                    <Button
+                        value={i} //uses the props that are inherited from Display
+                        onClick={() => props.onClear()}
+                        buttonId = {i}
+                    />);
+                break;
+            case "+":
+                return (
+                    <Button
+                        value={i} //uses the props that are inherited from Display
+                        onClick={() => props.onClick(String(i))}
+                        buttonId = {"Plus"}
+                    />);
+                break;
+            case "-":
+                return (
+                    <Button
+                        value={i} //uses the props that are inherited from Display
+                        onClick={() => props.onClick(String(i))}
+                        buttonId = {"Minus"}
+                    />);
+                break;
+            case "x":
+                return (
+                    <Button
+                        value={i} //uses the props that are inherited from Display
+                        onClick={() => props.onClick(String(i))}
+                        buttonId = {"Multiply"}
+                    />);
+                break;
+            case "\u00F7":
+                return (
+                    <Button
+                        classNames={{'col-md-4': true}}
+                        value={i} //uses the props that are inherited from Display
+                        onClick={() => props.onClick(String(i))}
+                        buttonId = {"Divide"}
+                    />);
+                break;
+            case ".":
+                return (
+                    <Button
+                        value={i} //uses the props that are inherited from Display
+                        onClick={() => props.onClick(String(i))}
+                        buttonId = {"Dot"}
+                    />);
+                break;
+         default: 
             return (
                 <Button
                     value={i} //uses the props that are inherited from Display
-                    onClick={() => props.onClick(i)}
+                    onClick={() => props.onClick(String(i))}
+                    buttonId = {i}
                 />
                 );
-            }
+            break;
+        }
     }
   return (
-    <div class="button-container">
+    
+    <div className="button-container">
         <div className="top-row">
             {renderButton("Clear")}
             {renderButton("\u00F7")}
