@@ -5,6 +5,7 @@ import style from "../css/style.css"
 
 
 function Calculator() {
+
   return (
       <Display/>
   );
