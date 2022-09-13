@@ -5,10 +5,10 @@ This project is a Reactive Webpage that implements bootstrap and works by using 
 ## Available Features
 
 Capable of 
-*Addition, 
-*Subtraction, 
-*Multiplication, 
-*Division
-*Logic checks for improper calculation input
+* Addition
+* Subtraction
+* Multiplication
+* Division
+* Logic checks for improper calculation input
 
 
